@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emmanuel Lokudu | Web Developer &amp; Digital Designer</title>
+  <meta name="description" content="Emmanuel Lokudu builds mobile-first websites, practical business systems and visual brands for businesses and organizations in Kakuma, Kalobeyei and beyond.">
+  <meta name="author" content="Emmanuel Lokudu">
+  <meta property="og:title" content="Emmanuel Lokudu | Web Developer &amp; Digital Designer" />
+  <meta property="og:description" content="Mobile-first websites, business systems and visual design built for real-world impact." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Emmanuel Lokudu | Web Developer &amp; Digital Designer" />
+  <meta name="twitter:description" content="Mobile-first websites, practical business systems and visual design." />
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia,serif%22 font-size=%2260%22 fill=%22%23C6972A%22 text-anchor=%22middle%22>E</text></svg>">
+
+  <!-- Google Fonts: preconnect + <link> instead of @import. @import isn't discovered until the
+       browser starts parsing this CSS, which delays the font request; a <link> is discovered
+       immediately during HTML parsing. Preconnect warms up the connection to both Google Fonts
+       hosts before the request is even made — this matters most on the higher-latency mobile
+       connections this site is meant to serve well. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap">
+
+  <!-- CSS Custom Properties & Base Styles -->
+   <link rel="stylesheet" href="assets/style.css">
+
+     <noscript>
+    <style>szx
+      .reveal { opacity: 1 !important; transform: none !important; }
+      .hero-subtitle { opacity: 1 !important; transform: none !important; }
+      .custom-cursor { display: none !important; }
+    </style>
+  </noscript>
+</head>
+<body>
+
+  <!-- Skip link: first focusable element for keyboard & screen-reader users -->
+  <a href="#hero" class="skip-link">Skip to content</a>
+
+  <!-- Top Animated Border -->
+  <div class="header-border"></div>
+
+  <!-- Smooth Cursor Dot -->
+  <div class="custom-cursor"></div>
+
+  <!-- Header -->
+  <header>
+    <a href="#hero" class="brand-logo">E.T.S.</a>
+
+    <div class="header-right">
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#work" class="nav-link">Work</a>
+        <a href="#discipline" class="nav-link">Ethos</a>
+        <a href="#offer" class="nav-link">Offer</a>
+        <a href="#proof" class="nav-link">Proof</a>
+        <a href="#contact" class="nav-link nav-link--cta">Contact</a>
+      </nav>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="menu-toggle-text">Menu</span>
+      </button>
+      <div class="brand-coordinates">3.7144° N, 34.8437° E &middot; KAKUMA, KE</div>
+    </div>
+  </header>
+
+  <!-- Mobile menu overlay (shown under 900px in place of the inline nav) -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#work" class="mobile-menu-link"><span class="mobile-menu-num">01</span>Work</a>
+    <a href="#discipline" class="mobile-menu-link"><span class="mobile-menu-num">02</span>Ethos</a>
+    <a href="#offer" class="mobile-menu-link"><span class="mobile-menu-num">03</span>Offer</a>
+    <a href="#proof" class="mobile-menu-link"><span class="mobile-menu-num">04</span>Proof</a>
+    <a href="#contact" class="mobile-menu-link"><span class="mobile-menu-num">05</span>Contact</a>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="hero" tabindex="-1">
+    <!-- Kinetic Outlined Text Layer -->
+    <div class="kinetic-hero-bg">EMMANUEL</div>
+    
+    <!-- Foreground Text Layer -->
+    <div class="hero-foreground">
+      <div class="hero-tag">Emmanuel Tech Simplified</div>
+      <h1 class="hero-title">
+        <span id="typed-text">Simplifying Technology.</span>
+      </h1>
+      <p class="hero-subtitle">Empowering People.</p>
+      <p class="hero-summary">Mobile-first websites, business systems and visual design for ambitious businesses and community organizations.</p>
+      <div class="hero-actions">
+        <a href="#work" class="hero-action hero-action--primary">Explore my work</a>
+        <a href="#contact" class="hero-action">Start a project</a>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span class="scroll-line"></span>
+      <span class="scroll-text">SCROLL</span>
+    </div>
+  </section>
+
+  <!-- 01 — THE WORK -->
+  <section id="work">
+    <div class="section-header-kinetic">
+      <div class="kinetic-bg">WORK</div>
+      <h2 class="kinetic-fg">01 — THE WORK</h2>
+    </div>
+
+    <!-- Project 1: Panadol Garage Web System (Layout 1: 60/40) -->
+    <div class="project-row layout-1 reveal">
+      <div class="project-left">
+        <span class="project-category">Web Application </span>
+        <h3 class="project-title">Panadol Garage Web System</h3>
+        <p class="project-provocation">
+          "Why should local enterprises run on global software that doesn't understand their reality?"
+        </p>
+        <div class="project-image-container">
+          <div class="corner-bracket tl"></div>
+          <img src="assets/images/kpidashboard.png" alt="Panadol Garage web system KPI dashboard" class="project-image" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentNode.querySelector('.project-graphic-placeholder').style.display='flex';">
+          <div class="project-graphic-placeholder" style="display: none; margin-top: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            <div class="corner-bracket tl"></div>
+            <div class="wireframe-grid">
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+            </div>
+            <div class="project-graphic-text">Panadol Garage Web App</div>
+            <div class="corner-bracket br"></div>
+          </div>
+          <div class="corner-bracket br"></div>
+        </div>
+      </div>
+      <div class="project-right">
+        <div class="project-kpi">MOBILE</div>
+        <div class="project-kpi-label">Responsive custom management system designed for real garage operations</div>
+        <div class="view-btn"><a href="https://panadol-garage-demo.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View the Panadol Garage project">View Project <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+
+    <!-- Project 2: KUA Initiative (Layout 2: 40/60) -->
+    <div class="project-row layout-2 reveal">
+      <div class="project-left">
+        <div class="project-kpi">60+</div>
+        <div class="project-kpi-label">Refugee Youth Fully Trained in ICT.</div>
+        <div class="view-btn"><a href="assets/images/kua-students.jpg" target="_blank" rel="noopener noreferrer" aria-label="View the KUA Initiative project visual">View Project <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="project-right">
+        <span class="project-category">Education & Capacity Building</span>
+        <h3 class="project-title">KUA Initiative</h3>
+        <p class="project-provocation">
+          "Technology is one of the few borderless opportunities left in a world of physical walls."
+        </p>
+        <div class="project-image-container">
+          <div class="corner-bracket tl"></div>
+          <img src="assets/images/kua-students.jpg" alt="KUA Initiative ICT Class" class="project-image" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentNode.querySelector('.project-graphic-placeholder').style.display='flex';">
+          <div class="project-graphic-placeholder" style="display: none; margin-top: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            <div class="corner-bracket tl"></div>
+            <div class="wireframe-grid">
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+            </div>
+            <div class="project-graphic-text">KUA INITIATIVE</div>
+            <div class="corner-bracket br"></div>
+          </div>
+          <div class="corner-bracket br"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: Nice Fashion Enterprise (Layout 1: 60/40) -->
+    <div class="project-row layout-1 reveal">
+      <div class="project-left">
+        <span class="project-category">Brand Identity / Design</span>
+        <h3 class="project-title">Nice Fashion</h3>
+        <p class="project-provocation">
+          "Elevating African fashion to an international editorial standard, stitch by stitch."
+        </p>
+        <div class="project-image-container">
+          <div class="corner-bracket tl"></div>
+          <img src="assets/images/Nice-enterprise.jpg" alt="Nice Fashion Editorial Rebrand" class="project-image" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentNode.querySelector('.project-graphic-placeholder').style.display='flex';">
+          <div class="project-graphic-placeholder" style="display: none; margin-top: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+            <div class="corner-bracket tl"></div>
+            <div class="wireframe-grid">
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+              <div class="wireframe-cell"></div>
+            </div>
+            <div class="project-graphic-text">NICE FASHION</div>
+            <div class="corner-bracket br"></div>
+          </div>
+          <div class="corner-bracket br"></div>
+        </div>
+      </div>
+      <div class="project-right">
+        <div class="project-kpi">1:1</div>
+        <div class="project-kpi-label">Premium Editorial & Design System for Nicolas Mengo</div>
+        <div class="view-btn"><a href="assets/images/Nice-enterprise.jpg" target="_blank" rel="noopener noreferrer" aria-label="View the Nice Fashion project visual">View Project <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </div>
+
+    <!-- Project 4: Black Apron Restaurant Website (Layout 2: 40/60) -->
+    <div class="project-row layout-2 reveal">
+      <div class="project-left">
+        <div class="project-kpi">1 PAGE</div>
+        <div class="project-kpi-label">Responsive restaurant experience with menu discovery, gallery, contact and reservation sections</div>
+        <div class="view-btn"><a href="https://black-apron-demo.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="View the Black Apron restaurant project">View Project <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="project-right">
+        <span class="project-category">Web Design / Front-End Development</span>
+        <h3 class="project-title">Black Apron Restaurant</h3>
+        <p class="project-provocation">
+          "A warm, conversion-focused restaurant experience that turns browsing into menu discovery and reservations."
+        </p>
+        <a class="project-image-container" href="https://black-apron-demo.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Open the Black Apron restaurant website demo">
+          <div class="corner-bracket tl"></div>
+          <img src="assets/apron.png" alt="Black Apron restaurant website homepage" class="project-image" loading="lazy" decoding="async">
+          <div class="corner-bracket br"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 — THE DISCIPLINE -->
+  <section id="discipline" class="section-discipline">
+    <div class="section-header-kinetic">
+      <div class="kinetic-bg">ETHOS</div>
+      <h2 class="kinetic-fg">02 — THE DISCIPLINE</h2>
+    </div>
+
+    <div class="discipline-content reveal">
+      <div class="pull-quote">
+        "I don't build tools. I build leverage."
+      </div>
+      
+      <div class="discipline-grid">
+        <div class="discipline-col">
+          <span class="mono-num">02.1</span>
+          <h3 class="discipline-h3">The Pragmatic Idealist</h3>
+          <p>
+            In Kalobeyei and Kakuma, digital constraints are not limitations; they are structural boundaries. 
+            I engineer web solutions built to perform on unstable connections, low-bandwidth, and minimal hardware. 
+            Technology must solve the human equation where it is, not where we pretend it to be.
+          </p>
+        </div>
+        <div class="discipline-col">
+          <span class="mono-num">02.2</span>
+          <h3 class="discipline-h3">Radical Simplicity</h3>
+          <p>
+            Complexity is easy. Simplicity is a discipline. 
+            By stripping away unnecessary dependencies, proprietary frameworks, and recurring software subscriptions, 
+            I build highly resilient digital solutions that organizations completely own from day one.
+          </p>
+        </div>
+        <div class="discipline-col">
+          <span class="mono-num">02.3</span>
+          <h3 class="discipline-h3">Education as Infrastructure</h3>
+          <p>
+            Software is only as capable as the people operating it. 
+            Every deployment I build is accompanied by targeted community workshops, turning digital intimidation 
+            into functional competence for local youth and growing organizations.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 — THE OFFER -->
+  <section id="offer" class="section-offer">
+    <div class="section-header-kinetic">
+      <div class="kinetic-bg">IMPACT</div>
+      <h2 class="kinetic-fg">03 — THE OFFER</h2>
+    </div>
+
+    <div class="offer-frame reveal">
+      <div class="corner-bracket tl"></div>
+      <div class="corner-bracket tr"></div>
+      <div class="corner-bracket bl"></div>
+      <div class="corner-bracket br"></div>
+      
+      <div class="offer-grid">
+        <!-- Offer 1 -->
+        <div class="offer-col reveal">
+          <div class="offer-bg-num">01</div>
+          <div class="offer-content">
+            <h3 class="offer-title">Digital Infrastructure</h3>
+            <p class="offer-desc">
+              From zero to operational — web systems, custom business tools, and automations designed to execute while you sleep.
+            </p>
+          </div>
+        </div>
+        <!-- Offer 2 -->
+        <div class="offer-col reveal">
+          <div class="offer-bg-num">02</div>
+          <div class="offer-content">
+            <h3 class="offer-title">ICT Training & Capacity Building</h3>
+            <p class="offer-desc">
+              Turning digital intimidation into digital confidence for refugee youth and communities that can't afford to wait.
+            </p>
+          </div>
+        </div>
+        <!-- Offer 3 -->
+        <div class="offer-col reveal">
+          <div class="offer-bg-num">03</div>
+          <div class="offer-content">
+            <h3 class="offer-title">Brand & Visual Systems</h3>
+            <p class="offer-desc">
+              Striking visual identity and structural document systems for organizations that need to stand out globally before saying a word.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 — PROOF -->
+  <section id="proof" class="section-proof">
+    <div class="section-header-kinetic">
+      <div class="kinetic-bg">METRICS</div>
+      <h2 class="kinetic-fg">04 — PROOF</h2>
+    </div>
+
+    <!-- Scrolling Ticker -->
+    <h3 class="sr-only">Organizations and communities worked with</h3>
+    <ul class="sr-only">
+      <li>KUA Initiative</li>
+      <li>Nice Fashion Enterprise</li>
+      <li>Panadol Garage</li>
+      <li>Black Apron Restaurant</li>
+      <li>Kalobeyei Settlement</li>
+      <li>Emmanuel Tech Simplified</li>
+    </ul>
+    <div class="marquee-container" aria-hidden="true">
+      <div class="marquee-track">
+        <!-- Sequence 1 -->
+        <span class="marquee-item">KUA Initiative <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Nice Fashion Enterprise <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Panadol Garage <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Black Apron Restaurant <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Emmanuel Tech Simplified <span class="marquee-dot"></span></span>
+        <!-- Sequence 2 (for continuous scroll loop) -->
+        <span class="marquee-item">KUA Initiative <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Nice Fashion Enterprise <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Panadol Garage <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Black Apron Restaurant <span class="marquee-dot"></span></span>
+        <span class="marquee-item">Emmanuel Tech Simplified <span class="marquee-dot"></span></span>
+      </div>
+    </div>
+
+    <!-- Stark Metrics Grid -->
+    <div class="metrics-container reveal">
+      <div class="metric-block">
+        <div class="metric-number">5+</div>
+        <div class="metric-label">Organizations Impacted</div>
+      </div>
+      <div class="metric-block">
+        <div class="metric-number">100+</div>
+        <div class="metric-label">Youth Trained in ICT</div>
+      </div>
+      <div class="metric-block">
+        <div class="metric-number">7</div>
+        <div class="metric-label">Business Modules Shipped</div>
+      </div>
+    </div>
+    
+    <hr class="gold-divider">
+  </section>
+
+  <!-- 05 — THE CONTACT -->
+  <section id="contact" class="section-contact">
+    <div class="kinetic-contact-bg">TALK</div>
+    
+    <div class="contact-main reveal">
+      <!-- Left Column (55%) -->
+      <div class="contact-left-col">
+        <h2 class="contact-heading">Let's build something that matters.</h2>
+        <div class="contact-arrow">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <line x1="8" y1="32" x2="32" y2="8" stroke="#C6972A" stroke-width="1.5"/>
+            <polyline points="16,8 32,8 32,24" stroke="#C6972A" stroke-width="1.5" fill="none"/>
+          </svg>
+        </div>
+        <p class="contact-availability">
+          Currently available for new projects.
+          Based in Kalobeyei, Kenya — available for local and remote work.
+          If you need a website, practical business system,
+          ICT training or a clear visual identity, this is
+          where it starts.
+        </p>
+        <a class="contact-email-text" href="mailto:emmanueltechsimplified@gmail.com">emmanueltechsimplified@gmail.com</a>
+      </div>
+
+      <!-- Project enquiry form -->
+      <div class="contact-right-col">
+        <form class="contact-form" action="https://formsubmit.co/emmanueltechsimplified@gmail.com" method="POST">
+          <input type="hidden" name="_subject" value="New portfolio project enquiry">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="Thank you for contacting Emmanuel Tech Simplified. I have received your message and will respond as soon as possible.">
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="contact-name">Your name</label>
+              <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="Full name" required>
+            </div>
+            <div class="form-field">
+              <label for="contact-email">Email address</label>
+              <input id="contact-email" type="email" name="_replyto" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-field">
+              <label for="contact-service">Service needed</label>
+              <select id="contact-service" name="service" required>
+                <option value="" selected disabled>Select a service</option>
+                <option value="Website design and development">Website design &amp; development</option>
+                <option value="Business management system">Business management system</option>
+                <option value="Graphic design and branding">Graphic design &amp; branding</option>
+                <option value="Social media management">Social media management</option>
+                <option value="ICT training">ICT training</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="contact-budget">Estimated budget</label>
+              <select id="contact-budget" name="budget">
+                <option value="" selected>Not sure yet</option>
+                <option value="Below KES 10,000">Below KES 10,000</option>
+                <option value="KES 10,000 - 25,000">KES 10,000 - 25,000</option>
+                <option value="KES 25,000 - 50,000">KES 25,000 - 50,000</option>
+                <option value="Above KES 50,000">Above KES 50,000</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="contact-message">Tell me about your project</label>
+            <textarea id="contact-message" name="message" rows="6" placeholder="What would you like to create or improve?" required></textarea>
+          </div>
+
+          <button class="contact-submit" type="submit">Send Project Enquiry <span aria-hidden="true">→</span></button>
+          <p class="form-note">Your details will only be used to respond to this enquiry.</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="contact-footer">
+      <div class="social-row">
+        <!-- GitHub Link -->
+        <a href="https://github.com/emmanuellokudu" target="_blank" rel="noopener noreferrer" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+          </svg>
+          GitHub
+        </a>
+        <!-- Email Link -->
+        <a href="mailto:emmanueltechsimplified@gmail.com" class="social-link">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z"/>
+          </svg>
+          Email
+        </a>
+      </div>
+      <div class="copyright">&copy; 2026 EMMANUEL TECH SIMPLIFIED. ALL RIGHTS RESERVED.</div>
+    </div>
+  </section>
+
+  <!-- Dependency-free interactions for reliable performance on slower connections. -->
+  <script>
+    function typeText(el, text, speed) {
+      return new Promise((resolve) => {
+        el.textContent = '';
+        const cursor = document.createElement('span');
+        cursor.className = 'typed-cursor';
+        cursor.textContent = '|';
+        el.appendChild(cursor);
+        let i = 0;
+        const step = () => {
+          if (i < text.length) {
+            cursor.insertAdjacentText('beforebegin', text.charAt(i));
+            i++;
+            setTimeout(step, speed);
+          } else {
+            cursor.remove();
+            resolve();
+          }
+        };
+        step();
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const subtitle = document.querySelector('.hero-subtitle');
+      const revealSubtitle = () => {
+        if (subtitle) {
+          subtitle.style.opacity = '1';
+          subtitle.style.transform = 'translateY(0)';
+        }
+      };
+
+      // 1. Hero headline type-on effect (falls back to the static text already in the
+      //    HTML if this fails for any reason — see the noscript block in <head> too)
+      try {
+        const typedTarget = document.getElementById('typed-text');
+        if (typedTarget && !prefersReducedMotion) {
+          typeText(typedTarget, 'Simplifying Technology.', 55).then(revealSubtitle);
+        } else {
+          revealSubtitle();
+        }
+      } catch (err) {
+        revealSubtitle();
+      }
+
+      // 2. Smooth Cursor Dot following mouse (fine-pointer devices, motion allowed)
+      try {
+        const cursor = document.querySelector('.custom-cursor');
+        if (cursor) {
+          if (window.matchMedia('(pointer: fine)').matches && !prefersReducedMotion) {
+            let mouseX = -100;
+            let mouseY = -100;
+            let cursorX = -100;
+            let cursorY = -100;
+            let isHovered = false;
+
+            document.addEventListener('mousemove', (e) => {
+              mouseX = e.clientX;
+              mouseY = e.clientY;
+            });
+
+            const animateCursor = () => {
+              // Smooth Lerp for lag-free motion
+              cursorX += (mouseX - cursorX) * 0.15;
+              cursorY += (mouseY - cursorY) * 0.15;
+
+              const scale = isHovered ? ' scale(2.2)' : '';
+              cursor.style.transform = `translate3d(${cursorX - 4}px, ${cursorY - 4}px, 0)${scale}`;
+              requestAnimationFrame(animateCursor);
+            };
+            requestAnimationFrame(animateCursor);
+
+            // Hover scale adjustments for interactive targets
+            const interactives = document.querySelectorAll('a, button, .cta-button, .project-image-container');
+            interactives.forEach(item => {
+              item.addEventListener('mouseenter', () => {
+                isHovered = true;
+                cursor.style.backgroundColor = 'transparent';
+                cursor.style.border = '1px solid var(--ets-gold)';
+                cursor.style.transition = 'transform 0.2s, background-color 0.2s, border 0.2s';
+              });
+              item.addEventListener('mouseleave', () => {
+                isHovered = false;
+                cursor.style.backgroundColor = 'var(--ets-gold)';
+                cursor.style.border = 'none';
+              });
+            });
+          } else {
+            // Disable on touch screens or when reduced motion is requested
+            cursor.style.display = 'none';
+          }
+        }
+      } catch (err) {
+        // Decorative enhancement only — safe to skip silently
+      }
+
+      // 3. Scroll Parallax effect on large background text layers
+      try {
+        if (!prefersReducedMotion) {
+          window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            // Hero Background Parallax
+            const heroBg = document.querySelector('.kinetic-hero-bg');
+            if (heroBg) {
+              heroBg.style.transform = `translate3d(${scrollY * 0.15}px, -50%, 0)`;
+            }
+
+            // Section Background Parallax elements
+            const kinetics = document.querySelectorAll('.section-header-kinetic .kinetic-bg');
+            kinetics.forEach(bg => {
+              const rect = bg.parentElement.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const relativeOffset = (window.innerHeight - rect.top) * 0.1;
+                bg.style.transform = `translate3d(${relativeOffset}px, 0, 0)`;
+              }
+            });
+
+            // Contact Section Background Parallax
+            const contactBg = document.querySelector('.kinetic-contact-bg');
+            if (contactBg) {
+              const rect = contactBg.parentElement.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) {
+                const relativeOffset = (window.innerHeight - rect.top) * 0.12;
+                contactBg.style.transform = `translate3d(${relativeOffset}px, -50%, 0)`;
+              }
+            }
+          });
+        }
+      } catch (err) {
+        // Decorative enhancement only — safe to skip silently
+      }
+
+      // 4. Scroll-Triggered Reveal Animations via Intersection Observer
+      try {
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('active');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { root: null, rootMargin: '0px', threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+      } catch (err) {
+        // If IntersectionObserver is unavailable, show everything rather than hide it
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('active'));
+      }
+
+      // 5. Mobile menu toggle
+      try {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        if (menuToggle && mobileMenu) {
+          const toggleText = menuToggle.querySelector('.menu-toggle-text');
+          const closeMenu = () => {
+            mobileMenu.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            if (toggleText) toggleText.textContent = 'Menu';
+            document.body.style.overflow = '';
+          };
+          const openMenu = () => {
+            mobileMenu.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+            if (toggleText) toggleText.textContent = 'Close';
+            document.body.style.overflow = 'hidden';
+          };
+          menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.contains('active') ? closeMenu() : openMenu();
+          });
+          mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
+          });
+          document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeMenu();
+          });
+        }
+      } catch (err) {
+        // Non-critical: nav links still function as plain anchors without the toggle
+      }
+    });
+  </script>
+</body>
+</html>
