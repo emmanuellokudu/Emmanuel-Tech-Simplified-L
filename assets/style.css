@@ -158,13 +158,8 @@
       pointer-events: auto;
     }
 
-    .brand-logo {
-      font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--ets-white);
-      text-decoration: none;
+    .brand-logo .logo{
+      width: 150px;
       transition: color 0.3s ease;
     }
 
