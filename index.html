@@ -1,699 +1,345 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emmanuel Lokudu | Web Developer &amp; Digital Designer</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Emmanuel Lokudu | Web Developer, Designer &amp; ICT Trainer</title>
   <meta name="description"
-    content="Emmanuel Lokudu builds mobile-first websites, practical business systems and visual brands for businesses and organizations in Kakuma, Kalobeyei and beyond." />
-  <meta name="author" content="Emmanuel Lokudu" />
-  <meta property="og:title" content="Emmanuel Lokudu | Web Developer &amp; Digital Designer" />
+    content="Emmanuel Lokudu creates mobile-friendly websites, practical business systems and visual identities for businesses and community organizations in Kakuma, Kalobeyei and beyond.">
+  <meta name="author" content="Emmanuel Lokudu">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="canonical" href="https://emmanuel-tech-simplified-l.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Emmanuel Tech Simplified">
+  <meta property="og:title" content="Emmanuel Lokudu | Technology made simple">
   <meta property="og:description"
-    content="Mobile-first websites, business systems and visual design built for real-world impact." />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Emmanuel Lokudu | Web Developer &amp; Digital Designer" />
-  <meta name="twitter:description" content="Mobile-first websites, practical business systems and visual design." />
-  <meta name="theme-color" content="#0a0a0a" />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2268%22 font-family=%22Georgia,serif%22 font-size=%2260%22 fill=%22%23C6972A%22 text-anchor=%22middle%22>E</text></svg>" />
-
-  <!-- Google Fonts: preconnect + <link> instead of @import. @import isn't discovered until the
-       browser starts parsing this CSS, which delays the font request; a <link> is discovered
-       immediately during HTML parsing. Preconnect warms up the connection to both Google Fonts
-       hosts before the request is even made — this matters most on the higher-latency mobile
-       connections this site is meant to serve well. -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" />
-
-  <!-- CSS Custom Properties & Base Styles -->
-  <link rel="stylesheet" href="assets/style.css" />
-
-  <noscript>
-    <style>
-      .reveal {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
-      .hero-subtitle {
-        opacity: 1 !important;
-        transform: none !important;
-      }
-
-      .custom-cursor {
-        display: none !important;
-      }
-    </style>
-  </noscript>
+    content="Websites, business systems, visual identity and ICT training built for real-world use.">
+  <meta property="og:url" content="https://emmanuel-tech-simplified-l.vercel.app/">
+  <meta property="og:image" content="https://emmanuel-tech-simplified-l.vercel.app/assets/images/og-cover.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Emmanuel Tech Simplified — technology made simple">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Emmanuel Lokudu | Technology made simple">
+  <meta name="twitter:description"
+    content="Websites, business systems, visual identity and ICT training built for real-world use.">
+  <meta name="twitter:image" content="https://emmanuel-tech-simplified-l.vercel.app/assets/images/og-cover.png">
+  <link rel="icon" href="assets/images/Emmanuel-Tech-Simplified-logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://emmanuel-tech-simplified-l.vercel.app/#emmanuel","name":"Emmanuel Lokudu","url":"https://emmanuel-tech-simplified-l.vercel.app/","email":"mailto:emmanuel.lokudu.f@gmail.com","telephone":"+254702900551","jobTitle":"Web Developer, Digital Designer and ICT Trainer","sameAs":["https://github.com/emmanuellokudu","https://www.linkedin.com/in/emmanuel-lokudu-b06b1a3b2"],"worksFor":{"@id":"https://emmanuel-tech-simplified-l.vercel.app/#service"}},{"@type":"ProfessionalService","@id":"https://emmanuel-tech-simplified-l.vercel.app/#service","name":"Emmanuel Tech Simplified","url":"https://emmanuel-tech-simplified-l.vercel.app/","email":"emmanuel.lokudu.f@gmail.com","telephone":"+254702900551","areaServed":["Kakuma","Kalobeyei","Kenya"],"founder":{"@id":"https://emmanuel-tech-simplified-l.vercel.app/#emmanuel"}},{"@type":"WebSite","@id":"https://emmanuel-tech-simplified-l.vercel.app/#website","url":"https://emmanuel-tech-simplified-l.vercel.app/","name":"Emmanuel Tech Simplified","publisher":{"@id":"https://emmanuel-tech-simplified-l.vercel.app/#service"}}]}
+  </script>
 </head>
 
 <body>
-  <!-- Skip link: first focusable element for keyboard & screen-reader users -->
-  <a href="#hero" class="skip-link">Skip to content</a>
-
-  <!-- Top Animated Border -->
-  <div class="header-border"></div>
-
-  <!-- Smooth Cursor Dot -->
-  <div class="custom-cursor"></div>
-
-  <!-- Header -->
-  <header>
-    <a href="#hero" class="brand-logo"><img src="assets/images/Emmanuel-Tech-Simplified-logo.png"
-        alt="emmanuel tech  simplified logo" class="logo" /></a>
-
-    <div class="header-right">
-      <nav class="main-nav" aria-label="Primary">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#discipline" class="nav-link">Ethos</a>
-        <a href="#offer" class="nav-link">Offer</a>
-        <a href="#proof" class="nav-link">Proof</a>
-        <a href="#contact" class="nav-link nav-link--cta">Contact</a>
-      </nav>
-      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="menu-toggle-text">Menu</span>
-      </button>
-      <div class="brand-coordinates">
-        3.7144° N, 34.8437° E &middot; KAKUMA, KE
-      </div>
-    </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Emmanuel Tech Simplified home">
+      <img src="assets/images/Emmanuel-Tech-Simplified-logo.png" width="140" height="71" alt="Emmanuel Tech Simplified">
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#proof">Proof</a><a
+        class="nav-cta" href="#contact">Contact</a>
+    </nav>
+    <button class="menu-toggle" type="button" aria-expanded="false"
+      aria-controls="mobile-menu"><span>Menu</span></button>
   </header>
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
+    <a href="#work">Work</a><a href="#about">About</a><a href="#services">Services</a><a href="#proof">Proof</a><a
+      href="#contact">Contact</a>
+  </nav>
 
-  <!-- Mobile menu overlay (shown under 900px in place of the inline nav) -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#work" class="mobile-menu-link"><span class="mobile-menu-num">01</span>Work</a>
-    <a href="#discipline" class="mobile-menu-link"><span class="mobile-menu-num">02</span>Ethos</a>
-    <a href="#offer" class="mobile-menu-link"><span class="mobile-menu-num">03</span>Offer</a>
-    <a href="#proof" class="mobile-menu-link"><span class="mobile-menu-num">04</span>Proof</a>
-    <a href="#contact" class="mobile-menu-link"><span class="mobile-menu-num">05</span>Contact</a>
-  </div>
-
-  <!-- HERO SECTION -->
-  <section id="hero" tabindex="-1">
-    <!-- Kinetic Outlined Text Layer -->
-    <div class="kinetic-hero-bg">EMMANUEL</div>
-
-    <!-- Foreground Text Layer -->
-    <div class="hero-foreground">
-      <div class="hero-tag">Emmanuel Tech Simplified</div>
-      <h1 class="hero-title">
-        <span id="typed-text">Technology made simple.</span>
-      </h1>
-      <p class="hero-subtitle">Built for real people and real work.</p>
-      <p class="hero-summary">
-        Clear, mobile-friendly websites, practical business systems and visual
-        design that help businesses and organisations work better and reach
-        more people.
-      </p>
-      <div class="hero-actions">
-        <a href="#work" class="hero-action hero-action--primary">Explore my work</a>
-        <a href="#contact" class="hero-action">Start a project</a>
+  <main id="main">
+    <section class="hero" id="home" aria-labelledby="hero-title">
+      <div class="hero-watermark" aria-hidden="true">EMMANUEL</div>
+      <div class="hero-content">
+        <p class="eyebrow">Emmanuel Tech Simplified · Kakuma / Kalobeyei, Kenya</p>
+        <h1 id="hero-title">Technology made simple.<br><em>Built for real work.</em></h1>
+        <p class="hero-copy">I create mobile-friendly websites, practical business systems and visual identities for
+          businesses, CBOs and community organizations.</p>
+        <div class="button-row">
+          <a class="button button-primary" href="#contact">Start a Project</a>
+          <a class="button" href="#work">View Selected Work</a>
+        </div>
+        <ul class="trust-line">
+          <li>Mobile first</li>
+          <li>Clear handover</li>
+          <li>Built to maintain</li>
+        </ul>
       </div>
-    </div>
+    </section>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator">
-      <span class="scroll-line"></span>
-      <span class="scroll-text">SCROLL</span>
-    </div>
-  </section>
-
-  <!-- 01 — THE WORK -->
-  <section id="work">
-    <div class="section-header-kinetic">
-      <div class="kinetic-bg">WORK</div>
-      <h2 class="kinetic-fg">01 — THE WORK</h2>
-    </div>
-
-    <!-- Project 1: Panadol Garage Web System (Layout 1: 60/40) -->
-    <div class="project-row layout-1 reveal">
-      <div class="project-left">
-        <span class="project-category">Web Application </span>
-        <h3 class="project-title">Panadol Garage Web System</h3>
-        <p class="project-provocation">
-          "One simple place to manage repairs, customers, payments, stock and
-          daily records."
-        </p>
-        <div class="project-image-container">
-          <div class="corner-bracket tl"></div>
-          <img src="assets/images/kpidashboard.png" alt="Panadol Garage web system KPI dashboard" class="project-image"
-            loading="lazy" decoding="async" onerror="
-                this.style.display = 'none';
-                this.parentNode.querySelector(
-                  '.project-graphic-placeholder',
-                ).style.display = 'flex';
-              " />
-          <div class="project-graphic-placeholder" style="
-                display: none;
-                margin-top: 0;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              ">
-            <div class="corner-bracket tl"></div>
-            <div class="wireframe-grid">
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-            </div>
-            <div class="project-graphic-text">Panadol Garage Web App</div>
-            <div class="corner-bracket br"></div>
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <p class="eyebrow">01 — Selected work</p>
+        <h2 id="work-title">Useful work, clearly presented.</h2>
+        <p>Concise project summaries here; the decisions, process and solution live in each case study.</p>
+      </div>
+      <div class="projects">
+        <article class="project-card project-featured">
+          <a class="project-media" href="case-studies/panadol-garage.html"
+            aria-label="Read the Panadol Garage Management System case study">
+            <picture>
+              <source type="image/webp"
+                srcset="assets/images/optimized/panadol-640.webp 640w, assets/images/optimized/panadol-1200.webp 1200w"
+                sizes="(max-width: 760px) 100vw, 58vw"><img src="assets/images/kpidashboard.png" width="1918"
+                height="877" alt="Panadol Garage management dashboard showing business KPIs" loading="lazy"
+                decoding="async">
+            </picture>
+          </a>
+          <div class="project-copy">
+            <p class="eyebrow">Web application</p>
+            <h3>Panadol Garage Management System</h3>
+            <p>A focused system for repairs, customer records, payments, stock and daily operations.</p><a
+              class="text-link" href="case-studies/panadol-garage.html">Read case study <span
+                aria-hidden="true">→</span></a>
           </div>
-          <div class="corner-bracket br"></div>
-        </div>
-      </div>
-      <div class="project-right">
-        <div class="project-kpi">1.0</div>
-        <div class="project-kpi-label">
-          Custom management system for repairs, invoices, inventory and daily
-          operations
-        </div>
-        <div class="view-btn">
-          <a href="https://panadol-garage-demo.vercel.app/" target="_blank" rel="noopener noreferrer"
-            aria-label="View the Panadol Garage project">View Project <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 2: KUA Initiative (Layout 2: 40/60) -->
-    <div class="project-row layout-2 reveal">
-      <div class="project-left">
-        <div class="project-kpi">60+</div>
-        <div class="project-kpi-label">
-          Refugee Youth Fully Trained in ICT.
-        </div>
-        <div class="view-btn">
-          <a href="assets/images/kua-students.jpg" target="_blank" rel="noopener noreferrer"
-            aria-label="View the KUA Initiative project visual">View Project <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-      <div class="project-right">
-        <span class="project-category">Education & Capacity Building</span>
-        <h3 class="project-title">KUA Initiative</h3>
-        <p class="project-provocation">
-          "Practical digital-skills learning that helps young people build
-          confidence, access opportunities and prepare for work."
-        </p>
-        <div class="project-image-container">
-          <div class="corner-bracket tl"></div>
-          <img src="assets/images/kua-students.jpg" alt="KUA Initiative ICT Class" class="project-image" loading="lazy"
-            decoding="async" onerror="
-                this.style.display = 'none';
-                this.parentNode.querySelector(
-                  '.project-graphic-placeholder',
-                ).style.display = 'flex';
-              " />
-          <div class="project-graphic-placeholder" style="
-                display: none;
-                margin-top: 0;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              ">
-            <div class="corner-bracket tl"></div>
-            <div class="wireframe-grid">
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-            </div>
-            <div class="project-graphic-text">KUA INITIATIVE</div>
-            <div class="corner-bracket br"></div>
+        </article>
+        <article class="project-card">
+          <a class="project-media" href="case-studies/kua-initiative.html"
+            aria-label="Read the KUA Initiative case study">
+            <picture>
+              <source type="image/webp"
+                srcset="assets/images/optimized/kua-640.webp 640w, assets/images/optimized/kua-1200.webp 1200w"
+                sizes="(max-width: 760px) 100vw, 40vw"><img src="assets/images/kua-students.jpg" width="4208"
+                height="3120" alt="Young people participating in a KUA Initiative ICT training session" loading="lazy"
+                decoding="async">
+            </picture>
+          </a>
+          <div class="project-copy">
+            <p class="eyebrow">ICT training</p>
+            <h3>KUA Initiative</h3>
+            <p>Practical digital-skills training designed to build confidence and access to opportunity.</p><a
+              class="text-link" href="case-studies/kua-initiative.html">Read case study <span
+                aria-hidden="true">→</span></a>
           </div>
-          <div class="corner-bracket br"></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project 3: Nice Fashion Enterprise (Layout 1: 60/40) -->
-    <div class="project-row layout-1 reveal">
-      <div class="project-left">
-        <span class="project-category">Brand Identity / Design</span>
-        <h3 class="project-title">Nice Fashion</h3>
-        <p class="project-provocation">
-          "A clear visual identity that helps the business look professional,
-          earn trust and stand out to customers."
-        </p>
-        <div class="project-image-container">
-          <div class="corner-bracket tl"></div>
-          <img src="assets/images/Nice-enterprise.jpg" alt="Nice Fashion Editorial Rebrand" class="project-image"
-            loading="lazy" decoding="async" onerror="
-                this.style.display = 'none';
-                this.parentNode.querySelector(
-                  '.project-graphic-placeholder',
-                ).style.display = 'flex';
-              " />
-          <div class="project-graphic-placeholder" style="
-                display: none;
-                margin-top: 0;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-              ">
-            <div class="corner-bracket tl"></div>
-            <div class="wireframe-grid">
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-              <div class="wireframe-cell"></div>
-            </div>
-            <div class="project-graphic-text">NICE FASHION</div>
-            <div class="corner-bracket br"></div>
+        </article>
+        <article class="project-card">
+          <a class="project-media" href="case-studies/nice-fashion.html"
+            aria-label="Read the Nice Fashion Enterprise case study">
+            <picture>
+              <source type="image/webp"
+                srcset="assets/images/optimized/nice-fashion-640.webp 640w, assets/images/optimized/nice-fashion-1200.webp 1200w"
+                sizes="(max-width: 760px) 100vw, 40vw"><img src="assets/images/Nice-enterprise.jpg" width="1920"
+                height="1080" alt="Nice Fashion Enterprise visual identity presentation" loading="lazy"
+                decoding="async">
+            </picture>
+          </a>
+          <div class="project-copy">
+            <p class="eyebrow">Brand identity</p>
+            <h3>Nice Fashion Enterprise</h3>
+            <p>A practical visual direction that gives a growing fashion business a consistent, credible presence.</p><a
+              class="text-link" href="case-studies/nice-fashion.html">Read case study <span
+                aria-hidden="true">→</span></a>
           </div>
-          <div class="corner-bracket br"></div>
-        </div>
+        </article>
+        <article class="project-card">
+          <a class="project-media" href="case-studies/black-apron.html"
+            aria-label="Read the Black Apron Restaurant case study">
+            <picture>
+              <source type="image/webp"
+                srcset="assets/images/optimized/black-apron-640.webp 640w, assets/images/optimized/black-apron-1200.webp 1200w"
+                sizes="(max-width: 760px) 100vw, 40vw"><img src="assets/images/apron.png" width="1896" height="874"
+                alt="Black Apron Restaurant website homepage" loading="lazy" decoding="async">
+            </picture>
+          </a>
+          <div class="project-copy">
+            <p class="eyebrow">Website design &amp; development</p>
+            <h3>Black Apron Restaurant</h3>
+            <p>A responsive restaurant website for menu discovery, atmosphere, contact and reservation information.</p>
+            <a class="text-link" href="case-studies/black-apron.html">Read case study <span
+                aria-hidden="true">→</span></a>
+          </div>
+        </article>
+        <article class="project-card">
+          <a class="project-media" href="case-studies/balwa-africa.html" aria-label="Read the Balwa Africa case study">
+            <picture>
+              <source type="image/webp"
+                srcset="assets/images/optimized/balwa-africa-640.webp 640w, assets/images/optimized/balwa-africa-1200.webp 1200w"
+                sizes="(max-width: 760px) 100vw, 40vw"><img src="assets/images/Balwa-africe.png" width="1893"
+                height="871" alt="Balwa Africa website homepage featuring its tailoring and livelihood mission"
+                loading="lazy" decoding="async">
+            </picture>
+          </a>
+          <div class="project-copy">
+            <p class="eyebrow">Community organization website</p>
+            <h3>Balwa Africa</h3>
+            <p>A mission-led website for a Kakuma organization empowering refugee youth and women through tailoring,
+              fashion and creative skills.</p><a class="text-link" href="case-studies/balwa-africa.html">Read case study
+              <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
       </div>
-      <div class="project-right">
-        <div class="project-kpi">1:1</div>
-        <div class="project-kpi-label">
-          Brand identity and visual direction for a growing fashion business
-        </div>
-        <div class="view-btn">
-          <a href="assets/images/Nice-enterprise.jpg" target="_blank" rel="noopener noreferrer"
-            aria-label="View the Nice Fashion project visual">View Project <span aria-hidden="true">↗</span></a>
-        </div>
+      <div class="section-cta">
+        <p>Have a project with a practical goal?</p><a class="button" href="#contact">Start a conversation</a>
       </div>
-    </div>
+    </section>
 
-    <!-- Project 4: Black Apron Restaurant Website (Layout 2: 40/60) -->
-    <div class="project-row layout-2 reveal">
-      <div class="project-left">
-        <div class="project-kpi">1.2</div>
-        <div class="project-kpi-label">
-          Responsive restaurant experience with menu discovery, gallery,
-          contact and reservation sections
+    <section class="section section-tinted" id="about" aria-labelledby="about-title">
+      <div class="section-heading">
+        <p class="eyebrow">02 — About Emmanuel</p>
+        <h2 id="about-title">Local understanding. Practical digital craft.</h2>
+      </div>
+      <div class="about-grid">
+        <div>
+          <p class="lead">I’m a web developer, digital designer and ICT trainer working from Kakuma and Kalobeyei,
+            Kenya.</p>
+          <p>I help local businesses, CBOs and community organizations create mobile-friendly websites, useful business
+            systems and visual identities. My work accounts for limited connectivity, shared devices and teams that need
+            tools they can understand and maintain.</p>
+          <p>Every project is shaped around simplicity, training, maintainability and real-world usefulness.</p>
         </div>
-        <div class="view-btn">
-          <a href="https://black-apron-demo.vercel.app/" target="_blank" rel="noopener noreferrer"
-            aria-label="View the Black Apron restaurant project">View Project <span aria-hidden="true">↗</span></a>
-        </div>
+        <div class="capability-list"><span>Front-end development</span><span>Responsive web design</span><span>Business
+            systems</span><span>Visual identity</span><span>ICT training</span><span>Team handover</span></div>
       </div>
-      <div class="project-right">
-        <span class="project-category">Web Design / Front-End Development</span>
-        <h3 class="project-title">Black Apron Restaurant</h3>
-        <p class="project-provocation">
-          "A welcoming restaurant website that makes it easy to explore the
-          menu, view the space and make a reservation."
-        </p>
-        <a class="project-image-container" href="https://black-apron-demo.vercel.app/" target="_blank"
-          rel="noopener noreferrer" aria-label="Open the Black Apron restaurant website demo">
-          <div class="corner-bracket tl"></div>
-          <img src="assets/images/apron.png" alt="Black Apron restaurant website homepage" class="project-image"
-            loading="lazy" decoding="async" />
-          <div class="corner-bracket br"></div>
-        </a>
-      </div>
-    </div>
+      <p class="asset-note">A portrait and downloadable CV will be added when Emmanuel provides approved assets.</p>
+    </section>
 
-    <!-- Project 4: Black Apron Restaurant Website (Layout 2: 40/60) -->
-    <div class="project-row layout-2 reveal">
-      <div class="project-left">
-        <div class="project-kpi">1.3</div>
-        <div class="project-kpi-label">
-          Responsive restaurant experience with menu discovery, gallery,
-          contact and reservation sections
-        </div>
-        <div class="view-btn">
-          <a href="https://black-apron-demo.vercel.app/" target="_blank" rel="noopener noreferrer"
-            aria-label="View the Black Apron restaurant project">View Project <span aria-hidden="true">↗</span></a>
-        </div>
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="section-heading">
+        <p class="eyebrow">03 — Services</p>
+        <h2 id="services-title">Clear deliverables. No mystery.</h2>
+        <p>Request a quotation based on scope, timeline and the support your team needs.</p>
       </div>
-      <div class="project-right">
-        <span class="project-category">Web Design / Front-End Development</span>
-        <h3 class="project-title">Balwa Africa</h3>
-        <p class="project-provocation">
-          "A welcoming restaurant website that makes it easy to explore the
-          menu, view the space and make a reservation."
-        </p>
-        <a class="project-image-container" href="https://balwa-africa.vercel.app/" target="_blank"
-          rel="noopener noreferrer" aria-label="Open the Black Apron restaurant website demo">
-          <div class="corner-bracket tl"></div>
-          <img src="assets/images/Balwa-africe.png" alt="Balwa Africa tailoring website homepage" class="project-image"
-            loading="lazy" decoding="async" />
-          <div class="corner-bracket br"></div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 — THE DISCIPLINE -->
-  <section id="discipline" class="section-discipline">
-    <div class="section-header-kinetic">
-      <div class="kinetic-bg">ETHOS</div>
-      <h2 class="kinetic-fg">02 — THE DISCIPLINE</h2>
-    </div>
-
-    <div class="discipline-content reveal">
-      <div class="pull-quote">
-        "Useful technology should make work easier."
-      </div>
-
-      <div class="discipline-grid">
-        <div class="discipline-col">
-          <span class="mono-num">02.1</span>
-          <h3 class="discipline-h3">Built for real conditions</h3>
-          <p>
-            I design digital solutions with the realities of Kakuma and
-            Kalobeyei in mind: mobile phones, limited data, slower connections
-            and busy teams. The result is practical technology people can use
-            every day.
+      <div class="service-grid">
+        <article><span>01</span>
+          <h3>Websites &amp; web apps</h3>
+          <p>Information architecture, responsive interface design, front-end development, testing, deployment and
+            handover.</p>
+        </article>
+        <article><span>02</span>
+          <h3>ICT training</h3>
+          <p>Practical learning sessions, accessible guidance, hands-on support and materials suited to the audience.
           </p>
-        </div>
-        <div class="discipline-col">
-          <span class="mono-num">02.2</span>
-          <h3 class="discipline-h3">Simple to use and maintain</h3>
-          <p>
-            Good technology should not feel confusing. I focus on clear steps,
-            useful features and solutions that your team can understand,
-            manage and grow with confidence.
+        </article>
+        <article><span>03</span>
+          <h3>Brand &amp; visual systems</h3>
+          <p>Visual direction, identity assets and reusable communication materials for a consistent public presence.
           </p>
-        </div>
-        <div class="discipline-col">
-          <span class="mono-num">02.3</span>
-          <h3 class="discipline-h3">Training that builds confidence</h3>
-          <p>
-            A digital solution only works when people know how to use it. I
-            provide practical setup and training so teams, young people and
-            organisations can get value from the tools they adopt.
-          </p>
-        </div>
+        </article>
       </div>
-    </div>
-  </section>
-
-  <!-- 03 — THE OFFER -->
-  <section id="offer" class="section-offer">
-    <div class="section-header-kinetic">
-      <div class="kinetic-bg">IMPACT</div>
-      <h2 class="kinetic-fg">03 — THE OFFER</h2>
-    </div>
-
-    <div class="offer-frame reveal">
-      <div class="corner-bracket tl"></div>
-      <div class="corner-bracket tr"></div>
-      <div class="corner-bracket bl"></div>
-      <div class="corner-bracket br"></div>
-
-      <div class="offer-grid">
-        <!-- Offer 1 -->
-        <div class="offer-col reveal">
-          <div class="offer-bg-num">1.0</div>
-          <div class="offer-content">
-            <h3 class="offer-title">Websites &amp; Web Apps</h3>
-            <p class="offer-desc">
-              Professional websites and simple digital tools that help you
-              reach customers, organise work and make better decisions.
-            </p>
-          </div>
-        </div>
-        <!-- Offer 2 -->
-        <div class="offer-col reveal">
-          <div class="offer-bg-num">02</div>
-          <div class="offer-content">
-            <h3 class="offer-title">ICT Training & Capacity Building</h3>
-            <p class="offer-desc">
-              Friendly, practical training that helps young people and teams
-              use digital tools with confidence.
-            </p>
-          </div>
-        </div>
-        <!-- Offer 3 -->
-        <div class="offer-col reveal">
-          <div class="offer-bg-num">03</div>
-          <div class="offer-content">
-            <h3 class="offer-title">Brand & Visual Systems</h3>
-            <p class="offer-desc">
-              Clear brand identity, graphics and communication materials that
-              help your organisation look credible and memorable.
-            </p>
-          </div>
-        </div>
+      <div class="process">
+        <h3>How a project moves</h3>
+        <ol>
+          <li><strong>Discover</strong><span>Goals and context</span></li>
+          <li><strong>Plan</strong><span>Scope and priorities</span></li>
+          <li><strong>Design</strong><span>Clear user experience</span></li>
+          <li><strong>Build</strong><span>Responsive implementation</span></li>
+          <li><strong>Launch</strong><span>Testing and handover</span></li>
+          <li><strong>Support</strong><span>Training and follow-up</span></li>
+        </ol>
       </div>
-    </div>
-  </section>
-
-  <!-- 04 — PROOF -->
-  <section id="proof" class="section-proof">
-    <div class="section-header-kinetic">
-      <div class="kinetic-bg">METRICS</div>
-      <h2 class="kinetic-fg">04 — PROOF</h2>
-    </div>
-
-    <!-- Scrolling Ticker -->
-    <h3 class="sr-only">Organizations and communities worked with</h3>
-    <ul class="sr-only">
-      <li>KUA Initiative</li>
-      <li>Nice Fashion Enterprise</li>
-      <li>Panadol Garage</li>
-      <li>Black Apron Restaurant</li>
-      <li>Kalobeyei Settlement</li>
-      <li>Emmanuel Tech Simplified</li>
-    </ul>
-    <div class="marquee-container" aria-hidden="true">
-      <div class="marquee-track">
-        <!-- Sequence 1 -->
-        <span class="marquee-item"
-            >KUA Initiative <span class="marquee-dot"></span
-          ></span>
-        <span class="marquee-item">Nice Fashion Enterprise <span class="marquee-dot"></span></span>
-        <span class="marquee-item">Panadol Garage <span class="marquee-dot"></span></span>
-        <span class="marquee-item">Black Apron Restaurant <span class="marquee-dot"></span></span>
-        <span class="marquee-item">Emmanuel Tech Simplified <span class="marquee-dot"></span></span>
-        <!-- Sequence 2 (for continuous scroll loop) -->
-        <span class="marquee-item"
-            >KUA Initiative <span class="marquee-dot"></span
-          ></span>
-        <span class="marquee-item">Nice Fashion Enterprise <span class="marquee-dot"></span></span>
-        <span class="marquee-item">Panadol Garage <span class="marquee-dot"></span></span>
-        <span class="marquee-item">Black Apron Restaurant <span class="marquee-dot"></span></span>
-        <span class="marquee-item">Emmanuel Tech Simplified <span class="marquee-dot"></span></span>
+      <div class="section-cta">
+        <p>Not sure which service fits?</p><a class="button" href="#contact">Request a quotation</a>
       </div>
-    </div>
+    </section>
 
-    <!-- Stark Metrics Grid -->
-    <div class="metrics-container reveal">
-      <div class="metric-block">
-        <div class="metric-number">4+</div>
-        <div class="metric-label">Organizations Impacted</div>
+    <section class="section section-tinted" id="proof" aria-labelledby="proof-title">
+      <div class="section-heading">
+        <p class="eyebrow">04 — Proof</p>
+        <h2 id="proof-title">Evidence, with the categories made clear.</h2>
       </div>
-      <div class="metric-block">
-        <div class="metric-number">60+</div>
-        <div class="metric-label">Youth Trained in ICT</div>
+      <div class="proof-grid">
+        <article><span class="proof-label">Clients &amp; organizations</span><strong>Panadol Garage · Nice Fashion
+            Enterprise · Balwa Africa</strong></article>
+        <article><span class="proof-label">Community programme</span><strong>KUA Initiative ICT training</strong>
+        </article>
+        <article><span class="proof-label">Communities reached</span><strong>Kakuma and Kalobeyei</strong></article>
+        <article><span class="proof-label">Selected projects delivered</span><strong>5 case studies published</strong>
+        </article>
       </div>
-      <div class="metric-block">
-        <div class="metric-number">7</div>
-        <div class="metric-label">Business Modules Shipped</div>
-      </div>
-    </div>
-
-    <div class="testimonial-wrap reveal" aria-labelledby="client-testimonial-heading">
-      <div class="testimonial-intro">
-        <span class="testimonial-eyebrow">Client testimonial</span>
-        <h3 id="client-testimonial-heading">
-          Trusted to deliver practical solutions.
-        </h3>
-        <p>
-          Panadol Garage partnered with Emmanuel Tech Simplified to create a
-          management app built around the way the garage works every day.
-        </p>
-      </div>
-
-      <figure class="testimonial-card">
-        <div class="testimonial-photo-wrap">
-          <img src="assets/images/bashiri-juma-omari.jpg" alt="Bashiri Juma Omari, Founder and CEO of Panadol Garage"
-            class="testimonial-photo" loading="lazy" decoding="async" />
-          <span class="testimonial-photo-label">Bashiri Juma Omari</span>
-        </div>
-        <figcaption class="testimonial-content">
-          <span class="testimonial-mark" aria-hidden="true">“</span>
-          <blockquote>
-            <p>
-              Working with Emmanuel on the Panadol Garage Management App has
-              been a great experience. From the beginning, he was
-              professional, patient and committed to understanding our needs.
-              He delivered the app on time, provided proper setup and
-              training, and was always available to offer support whenever we
-              needed help.
-            </p>
-            <p>
-              The app has made it much easier for us to manage our daily
-              operations, improve record keeping and run the garage more
-              efficiently. Emmanuel pays attention to detail and genuinely
-              cares about the quality of his work.
-            </p>
-            <p>
-              I highly recommend Emmanuel to anyone looking for a reliable and
-              skilled app developer. His professionalism, technical expertise
-              and dedication to customer satisfaction make him someone you can
-              trust with your project.
-            </p>
-          </blockquote>
-          <div class="testimonial-author">
-            <strong>Bashiri Juma Omari</strong>
-            <span>Founder &amp; CEO, Panadol Garage</span>
-          </div>
+      <figure class="testimonial">
+        <picture>
+          <source type="image/webp"
+            srcset="assets/images/optimized/bashiri-480.webp 480w, assets/images/optimized/bashiri-800.webp 800w"
+            sizes="(max-width: 720px) 100vw, 32vw"><img src="assets/images/bashiri-juma-omari.jpg" width="1066"
+            height="1600" alt="Bashiri Juma Omari, Founder and CEO of Panadol Garage" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>
+          <p class="eyebrow">Client testimonial</p>
+          <blockquote>“Emmanuel was professional, patient and committed to understanding our needs. He delivered the app
+            on time, provided setup and training, and remained available for support. The app has made daily operations
+            and record keeping much easier.”</blockquote>
+          <p><strong>Bashiri Juma Omari</strong><br>Founder &amp; CEO, Panadol Garage</p>
         </figcaption>
       </figure>
-    </div>
+      <div class="section-cta">
+        <p>Need a similarly practical solution?</p><a class="button" href="#contact">Discuss your project</a>
+      </div>
+    </section>
 
-    <hr class="gold-divider" />
-  </section>
-
-  <!-- 05 — THE CONTACT -->
-  <section id="contact" class="section-contact">
-    <div class="kinetic-contact-bg">TALK</div>
-
-    <div class="contact-main reveal">
-      <!-- Left Column (55%) -->
-      <div class="contact-left-col">
-        <h2 class="contact-heading">Let's build something that matters.</h2>
-        <div class="contact-arrow">
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-            <line x1="8" y1="32" x2="32" y2="8" stroke="#C6972A" stroke-width="1.5" />
-            <polyline points="16,8 32,8 32,24" stroke="#C6972A" stroke-width="1.5" fill="none" />
-          </svg>
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-intro">
+        <p class="eyebrow">05 — Contact</p>
+        <h2 id="contact-title">Let’s build something useful.</h2>
+        <p>Share the goal, service and budget range. I’ll review the enquiry, clarify the scope and prepare the next
+          step or a quotation.</p><a class="email-link"
+          href="mailto:emmanuel.lokudu.f@gmail.com">emmanuel.lokudu.f@gmail.com</a>
+        <a class="button whatsapp-cta" href="https://wa.me/254702900551" target="_blank" rel="noopener noreferrer"
+          aria-label="Start a WhatsApp conversation with Emmanuel Tech Simplified">Chat on WhatsApp</a>
+      </div>
+      <form class="contact-form" id="contact-form" data-provider="emailjs" novalidate>
+        <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website"
+            type="text" name="_honey" tabindex="-1" autocomplete="off"></div>
+        <div class="form-row">
+          <div class="field"><label for="name">Name</label><input id="name" name="from_name" type="text" autocomplete="name"
+              required aria-describedby="name-error"><span class="error" id="name-error"></span></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="reply_to" type="email"
+              autocomplete="email" required aria-describedby="email-error"><span class="error" id="email-error"></span>
+          </div>
         </div>
-        <p class="contact-availability">
-          Currently available for new projects. Based in Kalobeyei, Kenya —
-          available for local and remote work. If you need a website,
-          practical business system, ICT training or a clear visual identity,
-          this is where it starts.
-        </p>
-        <a class="contact-email-text" href="mailto:emmanuel.lokudu.f@gmail.com">emmanuel.lokudu.f@gmail.com</a>
-      </div>
+        <div class="form-row">
+          <div class="field"><label for="service">Service</label><select id="service" name="service" required
+              aria-describedby="service-error">
+              <option value="">Select a service</option>
+              <option>Website design and development</option>
+              <option>Business management system</option>
+              <option>Graphic design and branding</option>
+              <option>ICT training</option>
+              <option>Other</option>
+            </select><span class="error" id="service-error"></span></div>
+          <div class="field"><label for="budget">Budget</label><select id="budget" name="budget">
+              <option value="Not sure yet">Not sure yet</option>
+              <option>Below KES 10,000</option>
+              <option>KES 10,000–25,000</option>
+              <option>KES 25,000–50,000</option>
+              <option>Above KES 50,000</option>
+            </select></div>
+        </div>
+        <div class="field"><label for="message">Project description</label><textarea id="message" name="message"
+            rows="5" required minlength="20" aria-describedby="message-error"
+            placeholder="What would you like to create or improve?"></textarea><span class="error"
+            id="message-error"></span></div>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <button class="button button-primary submit-button" type="submit"><span>Send Project Enquiry</span></button>
+        <p class="privacy-note">Your details are used only to respond to this enquiry. Submission is delivered through
+          EmailJS.</p>
+      </form>
+    </section>
+  </main>
 
-      <!-- Project enquiry form -->
-      <div class="contact-right-col">
-        <form class="contact-form" action="https://formsubmit.co/emmanuel.lokudu.f@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New portfolio project enquiry" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_autoresponse"
-            value="Thank you for contacting Emmanuel Tech Simplified. I have received your message and will respond as soon as possible." />
+  <footer class="site-footer">
+    <p>© 2026 Emmanuel Tech Simplified</p>
+    <nav aria-label="Social links"><a href="https://github.com/emmanuellokudu" target="_blank"
+        rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/in/emmanuel-lokudu-b06b1a3b2"
+        target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="mailto:emmanuel.lokudu.f@gmail.com">Email</a>
+    </nav>
+  </footer>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="contact-name">Your name</label>
-              <input id="contact-name" type="text" name="name" autocomplete="name" placeholder="Full name" required />
-            </div>
-            <div class="form-field">
-              <label for="contact-email">Email address</label>
-              <input id="contact-email" type="email" name="_replyto" autocomplete="email" placeholder="you@example.com"
-                required />
-            </div>
-          </div>
+  <a
+  href="https://paystack.shop/pay/buy-emmanuel-a-coffee"
+  class="coffee-button"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Buy Emmanuel a coffee through Paystack"
+>
+  <span aria-hidden="true">☕</span>
+  <span>Buy Me a Coffee</span>
+</a>
 
-          <div class="form-row">
-            <div class="form-field">
-              <label for="contact-service">Service needed</label>
-              <select id="contact-service" name="service" required>
-                <option value="" selected disabled>Select a service</option>
-                <option value="Website design and development">
-                  Website design &amp; development
-                </option>
-                <option value="Business management system">
-                  Business management system
-                </option>
-                <option value="Graphic design and branding">
-                  Graphic design &amp; branding
-                </option>
-                <option value="Social media management">
-                  Social media management
-                </option>
-                <option value="ICT training">ICT training</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="contact-budget">Estimated budget</label>
-              <select id="contact-budget" name="budget">
-                <option value="" selected>Not sure yet</option>
-                <option value="Below KES 10,000">Below KES 10,000</option>
-                <option value="KES 10,000 - 25,000">
-                  KES 10,000 - 25,000
-                </option>
-                <option value="KES 25,000 - 50,000">
-                  KES 25,000 - 50,000
-                </option>
-                <option value="Above KES 50,000">Above KES 50,000</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-field">
-            <label for="contact-message">Tell me about your project</label>
-            <textarea id="contact-message" name="message" rows="6"
-              placeholder="What would you like to create or improve?" required></textarea>
-          </div>
-
-          <button class="contact-submit" type="submit">
-            Send Project Enquiry <span aria-hidden="true">→</span>
-          </button>
-          <p class="form-note">
-            Your details will only be used to respond to this enquiry.
-          </p>
-        </form>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="contact-footer">
-      <div class="social-row">
-        <!-- GitHub Link -->
-        <a href="https://github.com/emmanuellokudu" target="_blank" rel="noopener noreferrer" class="social-link">
-          <svg class="social-icon" viewBox="0 0 24 24">
-            <path
-              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-          </svg>
-          GitHub
-        </a>
-        <!--Facebook link-->
-        <a href="https://github.com/emmanuellokudu" target="_blank" rel="noopener noreferrer" class="social-link">
-          <svg class="social-icon" viewBox="0 0 24 25"  xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M12 2.53906C17.5229 2.53906 22 7.01621 22 12.5391C22 17.5304 18.3431 21.6674 13.5625 22.4176V15.4297H15.8926L16.3359 12.5391L13.5625 12.5387V10.6632C13.5625 10.657 13.5625 10.6509 13.5626 10.6447C13.5626 10.6354 13.5628 10.6262 13.5629 10.6169C13.578 9.84259 13.9742 9.10156 15.1921 9.10156H16.4531V6.64062C16.4531 6.64062 15.3087 6.44492 14.2146 6.44492C11.966 6.44492 10.4842 7.78652 10.4386 10.2193C10.4379 10.2578 10.4375 10.2965 10.4375 10.3355V12.5387H7.89844V15.4293L10.4375 15.4297V22.4172C5.65686 21.667 2 17.5304 2 12.5391C2 7.01621 6.47715 2.53906 12 2.53906Z"
-               />
-          </svg>
-          Facebook
-        </a>
-        <a href="https://github.com/emmanuellokudu" target="_blank" rel="noopener noreferrer" class="social-link">
-          <svg class="social-icon" viewBox="0 0 24 25"  xmlns="http://www.w3.org/2000/svg">
-           <path d="M19.7065 3H4.34844C3.62264 3 3.04199 3.58065 3.04199 4.30645V19.6935C3.04199 20.3903 3.62264 21 4.34844 21H19.6485C20.3743 21 20.9549 20.4194 20.9549 19.6935V4.27742C21.013 3.58065 20.4323 3 19.7065 3ZM8.35491 18.3H5.71297V9.73548H8.35491V18.3ZM7.01942 8.54516C6.14846 8.54516 5.4807 7.84839 5.4807 7.00645C5.4807 6.16452 6.17749 5.46774 7.01942 5.46774C7.86136 5.46774 8.55813 6.16452 8.55813 7.00645C8.55813 7.84839 7.91942 8.54516 7.01942 8.54516ZM18.371 18.3H15.7291V14.1484C15.7291 13.1613 15.7001 11.8548 14.3356 11.8548C12.942 11.8548 12.7388 12.9581 12.7388 14.0613V18.3H10.0968V9.73548H12.6807V10.9258H12.7097C13.0872 10.229 13.9291 9.53226 15.2356 9.53226C17.9356 9.53226 18.4291 11.2742 18.4291 13.6548V18.3H18.371Z" />
-          </svg>
-          Linkedin
-        </a>
-        <!-- Email Link -->
-        <a href="mailto:emmanueltechsimplified@gmail.com" class="social-link">
-          <svg class="social-icon" viewBox="0 0 24 24">
-            <path d="M12 12.713l-11.985-9.713h23.97l-11.985 9.713zm0 2.574l-12-9.725v15.438h24v-15.438l-12 9.725z" />
-          </svg>
-          Email
-        </a>
-      </div>
-      <div class="copyright">
-        &copy; 2026 EMMANUEL TECH SIMPLIFIED. ALL RIGHTS RESERVED.
-      </div>
-    </div>
-  </section>
-
-  <!-- Dependency-free interactions for reliable performance on slower connections. -->
-  <script src="assets/script.js"></script>
+  <script src="assets/emailjs-config.js" defer></script>
+  <script src="assets/script.min.js" defer></script>
 </body>
 
 </html>
