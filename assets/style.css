@@ -137,14 +137,19 @@ section[id] {
   text-decoration: none;
   text-transform: uppercase;
 }
+.desktop-nav a {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid transparent;
+}
 .desktop-nav a[aria-current="true"],
 .desktop-nav a:hover,
 .site-footer a:hover {
   color: var(--gold-light);
 }
+.desktop-nav a[aria-current="true"] {
+  border-color: var(--gold);
+}
 .nav-cta {
-  padding: 0.55rem 0.9rem;
-  border: 1px solid var(--gold);
   color: var(--gold-light);
 }
 .menu-toggle {
@@ -564,6 +569,11 @@ section[id] {
 }
 .contact-intro > p:not(.eyebrow) {
   max-width: 480px;
+}
+.contact-actions {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 .email-link {
   display: inline-block;
