@@ -26,7 +26,7 @@
     content="Websites, business systems, visual identity and ICT training built for real-world use.">
   <meta name="twitter:image" content="https://emmanuel-tech-simplified-l.vercel.app/assets/images/og-cover.png">
   <link rel="icon" href="assets/images/Emmanuel-Tech-Simplified-logo.png">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=paystack-1">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://emmanuel-tech-simplified-l.vercel.app/#emmanuel","name":"Emmanuel Lokudu","url":"https://emmanuel-tech-simplified-l.vercel.app/","email":"mailto:emmanuel.lokudu.f@gmail.com","telephone":"+254702900551","jobTitle":"Web Developer, Digital Designer and ICT Trainer","sameAs":["https://github.com/emmanuellokudu","https://www.linkedin.com/in/emmanuel-lokudu-b06b1a3b2"],"worksFor":{"@id":"https://emmanuel-tech-simplified-l.vercel.app/#service"}},{"@type":"ProfessionalService","@id":"https://emmanuel-tech-simplified-l.vercel.app/#service","name":"Emmanuel Tech Simplified","url":"https://emmanuel-tech-simplified-l.vercel.app/","email":"emmanuel.lokudu.f@gmail.com","telephone":"+254702900551","areaServed":["Kakuma","Kalobeyei","Kenya"],"founder":{"@id":"https://emmanuel-tech-simplified-l.vercel.app/#emmanuel"}},{"@type":"WebSite","@id":"https://emmanuel-tech-simplified-l.vercel.app/#website","url":"https://emmanuel-tech-simplified-l.vercel.app/","name":"Emmanuel Tech Simplified","publisher":{"@id":"https://emmanuel-tech-simplified-l.vercel.app/#service"}}]}
   </script>
@@ -330,19 +330,65 @@
     </nav>
   </footer>
 
-  <a
-  href="https://paystack.shop/pay/buy-emmanuel-a-coffee"
-  class="coffee-button"
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Buy Emmanuel a coffee through Paystack"
->
+  <button class="coffee-button" id="support-open" type="button" aria-haspopup="dialog">
   <span aria-hidden="true">☕</span>
   <span>Buy Me a Coffee</span>
-</a>
+  </button>
+
+  <dialog class="support-dialog" id="support-dialog" aria-labelledby="support-title"
+    aria-describedby="support-description">
+    <div class="support-dialog-card">
+      <button class="support-close" id="support-close" type="button" aria-label="Close support form">×</button>
+      <div id="support-form-view">
+        <p class="eyebrow">Support my work</p>
+        <h2 id="support-title">Buy me a coffee.</h2>
+        <p id="support-description">Choose an amount, then continue to Paystack’s secure checkout. No payment details
+          are collected on this website.</p>
+        <form id="support-form" novalidate>
+          <fieldset class="amount-fieldset">
+            <legend>Choose an amount</legend>
+            <div class="amount-options">
+              <input type="radio" name="support_amount" id="amount-100" value="100"><label for="amount-100">KES 100</label>
+              <input type="radio" name="support_amount" id="amount-250" value="250"><label for="amount-250">KES 250</label>
+              <input type="radio" name="support_amount" id="amount-500" value="500" checked><label for="amount-500">KES 500</label>
+              <input type="radio" name="support_amount" id="amount-1000" value="1000"><label for="amount-1000">KES 1,000</label>
+            </div>
+          </fieldset>
+          <div class="field"><label for="support-custom-amount">Or enter a custom amount (KES)</label><input
+              id="support-custom-amount" name="custom_amount" type="number" min="50" max="100000" step="1"
+              inputmode="numeric" aria-describedby="support-amount-error"><span class="error"
+              id="support-amount-error"></span></div>
+          <div class="form-row">
+            <div class="field"><label for="support-name">Full name</label><input id="support-name" name="name"
+                type="text" autocomplete="name" minlength="2" maxlength="100" required
+                aria-describedby="support-name-error"><span class="error" id="support-name-error"></span></div>
+            <div class="field"><label for="support-email">Email</label><input id="support-email" name="email"
+                type="email" autocomplete="email" maxlength="254" required aria-describedby="support-email-error"><span
+                class="error" id="support-email-error"></span></div>
+          </div>
+          <div class="field"><label for="support-message">Message (optional)</label><textarea id="support-message"
+              name="message" rows="3" maxlength="500" aria-describedby="support-message-help"></textarea><span
+              class="field-help" id="support-message-help">Up to 500 characters.</span></div>
+          <div class="form-status" id="support-status" role="status" aria-live="polite"></div>
+          <button class="button button-primary submit-button" id="support-submit" type="submit"><span>Continue to secure payment</span></button>
+        </form>
+      </div>
+      <div class="support-result" id="support-result" hidden tabindex="-1">
+        <p class="eyebrow" id="support-result-label">Payment status</p>
+        <h2 id="support-result-title">Checking your payment…</h2>
+        <p id="support-result-message">Please wait while Paystack confirms the transaction.</p>
+        <dl class="support-receipt" id="support-receipt" hidden>
+          <div><dt>Amount</dt><dd id="support-result-amount"></dd></div>
+          <div><dt>Reference</dt><dd id="support-result-reference"></dd></div>
+        </dl>
+        <button class="button" id="support-retry" type="button" hidden>Try again</button>
+      </div>
+    </div>
+  </dialog>
 
   <script src="assets/emailjs-config.js" defer></script>
   <script src="assets/script.min.js" defer></script>
+  <script src="assets/payment.js" defer></script>
 </body>
 
 </html>

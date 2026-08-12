@@ -986,6 +986,7 @@ section[id] {
 
   background: #0b0b0b;
   color: #c9a84c;
+  cursor: pointer;
   font-weight: 700;
   font-size: 15px;
   text-decoration: none;
@@ -1019,5 +1020,126 @@ section[id] {
     bottom: max(16px, env(safe-area-inset-bottom));
     padding: 11px 16px;
     font-size: 14px;
+  }
+}
+
+/* Secure Paystack support dialog */
+.support-dialog[open] {
+  width: min(720px, calc(100% - 2rem));
+  max-height: calc(100svh - 2rem);
+  padding: 0;
+  overflow: auto;
+  border: 1px solid var(--gold);
+  background: var(--surface);
+  color: var(--white);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.72);
+}
+.support-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(4px);
+}
+.support-dialog-card {
+  position: relative;
+  padding: clamp(1.4rem, 5vw, 3rem);
+}
+.support-dialog h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+}
+.support-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  background: var(--black);
+  color: var(--gold-light);
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.amount-fieldset {
+  margin: 1.5rem 0 1rem;
+  padding: 0;
+  border: 0;
+}
+.amount-fieldset legend {
+  margin-bottom: 0.6rem;
+  color: var(--gold-light);
+  font-family: var(--mono);
+  font-size: 0.69rem;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+.amount-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.55rem;
+}
+.amount-options input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.amount-options label {
+  display: grid;
+  min-height: 48px;
+  place-items: center;
+  padding: 0.55rem;
+  border: 1px solid var(--line);
+  color: var(--gold-light);
+  cursor: pointer;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+.amount-options input:checked + label {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--black);
+}
+.amount-options input:focus-visible + label {
+  outline: 3px solid var(--gold-light);
+  outline-offset: 3px;
+}
+.field-help {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+.support-result {
+  padding-block: 2rem;
+  text-align: center;
+}
+.support-result[data-state="success"] h2 {
+  color: var(--gold-light);
+}
+.support-receipt {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+  text-align: left;
+}
+.support-receipt div {
+  padding: 1rem;
+  border: 1px solid var(--line);
+}
+.support-receipt dt {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+.support-receipt dd {
+  margin: 0.3rem 0 0;
+  color: var(--white);
+  overflow-wrap: anywhere;
+}
+@media (max-width: 560px) {
+  .amount-options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .support-dialog[open] {
+    width: calc(100% - 1rem);
+    max-height: calc(100svh - 1rem);
   }
 }

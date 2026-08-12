@@ -47,8 +47,10 @@ for (const width of [320, 360, 390, 768, 1024, 1440]) {
   await loaded;
   await new Promise((resolve) => setTimeout(resolve, 350));
   if (width === 390 || width === 1440) {
+    await evaluate(`document.querySelector('#support-open').click()`);
     const capture = await command("Page.captureScreenshot", { format: "png", captureBeyondViewport: false });
     writeFileSync(new URL(`../audit/responsive-${width}.png`, import.meta.url), Buffer.from(capture.data, "base64"));
+    await evaluate(`document.querySelector('#support-dialog').close()`);
   }
   const layout = await evaluate(`(() => {
     const viewport = document.documentElement.clientWidth;
@@ -74,6 +76,25 @@ await loaded;
 const menuOpened = await evaluate(`(() => { document.querySelector('.menu-toggle').click(); return {expanded: document.querySelector('.menu-toggle').getAttribute('aria-expanded'), hidden: document.querySelector('#mobile-menu').hidden, bodyLocked: document.body.classList.contains('menu-open')}; })()`);
 const menuClosed = await evaluate(`(() => { document.querySelector('#mobile-menu a').click(); return {expanded: document.querySelector('.menu-toggle').getAttribute('aria-expanded'), hidden: document.querySelector('#mobile-menu').hidden, bodyLocked: document.body.classList.contains('menu-open')}; })()`);
 const formValidation = await evaluate(`(() => { document.querySelector('.contact-form').requestSubmit(); return {status: document.querySelector('.form-status').textContent, focusedField: document.activeElement.id, errors: [...document.querySelectorAll('.error')].map((item) => item.textContent).filter(Boolean)}; })()`);
+const supportValidation = await evaluate(`(() => {
+  document.querySelector('#support-open').click();
+  document.querySelector('#support-name').value = '';
+  document.querySelector('#support-email').value = 'invalid';
+  document.querySelector('#support-custom-amount').value = '49';
+  document.querySelector('#support-form').requestSubmit();
+  return {status: document.querySelector('#support-status').textContent, focusedField: document.activeElement.id, errors: [...document.querySelectorAll('#support-form .error')].map((item) => item.textContent).filter(Boolean)};
+})()`);
+const duplicateProtection = await evaluate(`(() => {
+  let calls = 0;
+  window.fetch = () => { calls += 1; return new Promise(() => {}); };
+  document.querySelector('#support-name').value = 'Test Supporter';
+  document.querySelector('#support-email').value = 'test@example.com';
+  document.querySelector('#support-custom-amount').value = '250';
+  const form = document.querySelector('#support-form');
+  form.requestSubmit();
+  form.requestSubmit();
+  return {calls, disabled: document.querySelector('#support-submit').disabled, label: document.querySelector('#support-submit span').textContent};
+})()`);
 
-console.log(JSON.stringify({ results, menuOpened, menuClosed, formValidation }, null, 2));
+console.log(JSON.stringify({ results, menuOpened, menuClosed, formValidation, supportValidation, duplicateProtection }, null, 2));
 socket.close();
