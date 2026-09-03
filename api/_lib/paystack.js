@@ -6,7 +6,7 @@ try {
 } catch {}
 
 const MIN_AMOUNT = 50;
-const MAX_AMOUNT = 1000000;
+const MAX_AMOUNT = 100000;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const REFERENCE_PATTERN = /^[A-Za-z0-9.=\-]{8,100}$/;
 
