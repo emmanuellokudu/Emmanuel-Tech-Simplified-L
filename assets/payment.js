@@ -125,6 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setSubmitting(true);
     status.textContent = "Creating a secure Paystack transaction…";
     try {
+      if (window.location.protocol === "file:") {
+        throw new Error("Paystack requires a running server environment. Please run 'npm run dev' or test on your deployed website.");
+      }
       const response = await fetch("/api/paystack/initialize", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -140,7 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
       status.textContent = "Redirecting to Paystack…";
       window.location.assign(payload.authorizationUrl);
     } catch (error) {
-      status.textContent = error instanceof Error ? error.message : "Payment could not be started. Please try again.";
+      let message = error instanceof Error ? error.message : "Payment could not be started. Please try again.";
+      if (message === "Failed to fetch") {
+        message = "Could not connect to payment server. Please ensure the dev server ('npm run dev') is running or check your internet connection.";
+      }
+      status.textContent = message;
       setSubmitting(false);
     }
   });
@@ -164,17 +171,31 @@ document.addEventListener("DOMContentLoaded", () => {
         setResult({ title: "Payment was not successful", message: "Paystack did not confirm this payment. Please try again or use a different payment method at checkout.", reference: payload.reference, retry: true });
       }
     } catch (error) {
-      setResult({ title: "Verification unavailable", message: error instanceof Error ? error.message : "We could not verify this payment.", reference, retry: true });
+      let message = error instanceof Error ? error.message : "We could not verify this payment.";
+      if (message === "Failed to fetch") {
+        message = "Could not connect to payment server. Please check your network connection or server status.";
+      }
+      setResult({ title: "Verification unavailable", message, reference, retry: true });
     }
   };
 
   const query = new URLSearchParams(window.location.search);
   const returnedReference = query.get("reference") || query.get("trxref");
-  if (returnedReference) verifyReturnedPayment(returnedReference);
-  else if (query.get("payment") === "callback") {
+  if (returnedReference) {
+    verifyReturnedPayment(returnedReference);
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  } else if (query.get("payment") === "callback") {
     setResult({ title: "No payment reference found", message: "This page cannot confirm a payment without a valid Paystack reference.", retry: true });
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
   } else if (query.get("payment") === "cancelled") {
     setResult({ title: "Payment was cancelled", message: "No payment was confirmed. You can try again whenever you’re ready.", retry: true });
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
   }
 
   window.addEventListener("pageshow", () => setSubmitting(false));

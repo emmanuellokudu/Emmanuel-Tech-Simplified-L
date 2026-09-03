@@ -1,4 +1,4 @@
-import { createReference, getSiteUrl, handleError, paystackRequest, sendJson, validateInitializeInput } from "../_lib/paystack.js";
+import { RequestError, createReference, getSiteUrl, handleError, paystackRequest, sendJson, validateInitializeInput } from "../_lib/paystack.js";
 
 export default async function initialize(req, res) {
   if (req.method !== "POST") {
@@ -27,9 +27,9 @@ export default async function initialize(req, res) {
         },
       }),
     });
-    if (!data || typeof data.authorization_url !== "string" || typeof data.reference !== "string") throw new Error("Incomplete initialization response.");
+    if (!data || typeof data.authorization_url !== "string" || typeof data.reference !== "string") throw new RequestError("Incomplete initialization response.", 502);
     const authorizationUrl = new URL(data.authorization_url);
-    if (authorizationUrl.protocol !== "https:" || authorizationUrl.hostname !== "checkout.paystack.com") throw new Error("Invalid checkout URL.");
+    if (authorizationUrl.protocol !== "https:" || !["checkout.paystack.com", "checkout.paystack.co"].includes(authorizationUrl.hostname)) throw new RequestError("Invalid checkout URL.", 502);
     return sendJson(res, 200, { authorizationUrl: authorizationUrl.href, reference: data.reference });
   } catch (error) {
     return handleError(res, error);

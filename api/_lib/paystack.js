@@ -1,7 +1,12 @@
 import { randomBytes, timingSafeEqual } from "node:crypto";
+import { setDefaultResultOrder } from "node:dns";
+
+try {
+  setDefaultResultOrder("ipv4first");
+} catch {}
 
 const MIN_AMOUNT = 50;
-const MAX_AMOUNT = 100000;
+const MAX_AMOUNT = 1000000;
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const REFERENCE_PATTERN = /^[A-Za-z0-9.=\-]{8,100}$/;
 
@@ -57,23 +62,34 @@ const normalizeBaseUrl = (value) => {
 const getSiteUrl = (req) => {
   if (process.env.SITE_URL) return normalizeBaseUrl(process.env.SITE_URL);
   if (process.env.VERCEL_URL) return normalizeBaseUrl(process.env.VERCEL_URL);
-  const host = String(req.headers.host || "");
-  if (/^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host)) return `http://${host}`;
+  const host = String(req?.headers?.host || "");
+  if (host) {
+    const proto = req.headers?.["x-forwarded-proto"] || (/^(localhost|127\.0\.0\.1)(:\d+)?$/.test(host) ? "http" : "https");
+    return normalizeBaseUrl(`${proto}://${host}`);
+  }
   throw new RequestError("Payment callback URL is not configured.", 503);
 };
 
 const paystackRequest = async (path, options = {}) => {
-  const response = await fetch(`https://api.paystack.co${path}`, {
-    ...options,
-    headers: { Authorization: `Bearer ${getSecretKey()}`, "Content-Type": "application/json", ...(options.headers || {}) },
-  });
+  let response;
+  try {
+    response = await fetch(`https://api.paystack.co${path}`, {
+      ...options,
+      headers: { Authorization: `Bearer ${getSecretKey()}`, "Content-Type": "application/json", ...(options.headers || {}) },
+    });
+  } catch (err) {
+    throw new RequestError(`Could not connect to Paystack API (${err instanceof Error ? err.message : "network error"}).`, 502);
+  }
   let payload;
   try {
     payload = await response.json();
   } catch {
     throw new RequestError("Payment provider returned an invalid response.", 502);
   }
-  if (!response.ok || payload.status !== true) throw new RequestError("Payment provider could not process the request. Please try again.", 502);
+  if (!response.ok || payload.status !== true) {
+    const providerMessage = payload?.message || "Payment provider could not process the request. Please try again.";
+    throw new RequestError(providerMessage, response.status >= 400 && response.status < 500 ? response.status : 502);
+  }
   return payload.data;
 };
 
@@ -84,8 +100,10 @@ const sendJson = (res, statusCode, body) => {
 };
 
 const handleError = (res, error) => {
-  const statusCode = error instanceof RequestError ? error.statusCode : 500;
-  const message = error instanceof RequestError ? error.message : "Payment service is temporarily unavailable.";
+  const isRequestError = error instanceof RequestError || error?.name === "RequestError" || typeof error?.statusCode === "number";
+  const statusCode = isRequestError ? (error.statusCode || 400) : 500;
+  if (statusCode >= 500) console.error("[Paystack Server Error]", error);
+  const message = error instanceof Error && error.message ? error.message : "Payment service is temporarily unavailable.";
   return sendJson(res, statusCode, { error: message });
 };
 
